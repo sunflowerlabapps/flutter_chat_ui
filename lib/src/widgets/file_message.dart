@@ -72,7 +72,7 @@ class FileMessage extends StatelessWidget {
                       margin: const EdgeInsets.only(
                         top: 4,
                       ),
-                      child: Text(formatBytes(message.size),
+                      child: Text(formatBytes(message.size.toInt()),
                           style: _user.id == message.author.id
                               ? InheritedChatTheme.of(context)
                                   .theme

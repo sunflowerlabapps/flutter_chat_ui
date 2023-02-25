@@ -136,7 +136,7 @@ class TextMessage extends StatelessWidget {
     final _user = InheritedUser.of(context).user;
     final _width = MediaQuery.of(context).size.width;
 
-    final urlRegexp = RegExp(REGEX_LINK);
+    final urlRegexp = RegExp(r'((http|ftp|https):\/\/)?([\w_-]+(?:(?:\.[\w_-]+)+))([\w.,@?^=%&:/~+#-]*[\w@?^=%&/~+#-])?');
     final matches = urlRegexp.allMatches(message.text.toLowerCase());
 
     if (matches.isNotEmpty && usePreviewData && onPreviewDataFetched != null) {
